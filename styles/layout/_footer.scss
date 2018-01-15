@@ -1,0 +1,335 @@
+@import '../imports.scss';
+@import '../base/_buttons.scss';
+
+#site-footer {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $heading-font-family;
+    font-size: modular-scale(1);
+    line-height: $heading-line-height;
+    margin: 1.25em 0 $small-spacing;
+  }
+
+  h1{
+    font-weight: bold;
+    font-size: 1.75rem;
+    color: $dark-gray;
+    letter-spacing: -0.73px;
+    line-height: 1.4rem;
+    text-transform: uppercase;
+
+    @media only screen and (max-width: $large-screen) {
+      font-size: 32px;
+      margin-bottom: 32px;
+    }
+    @media only screen and (max-width: $small-screen - 1) {
+      margin-bottom: 28px;
+      font-size: 1.75rem;
+    }
+  }
+
+  h2{
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 1.4rem;
+    letter-spacing: -0.52px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: $dark-gray;
+
+    @media only screen and (max-width: $small-screen) {
+      font-size: 1.125rem;
+      margin-bottom: 16px;
+    }
+  }
+
+  h3{
+    font-size: 1rem;
+    font-weight: bold;
+    color: $dark-gray;
+    line-height: 1.4rem;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: -0.52px;
+
+    @media only screen and (max-width: $large-screen) {
+      font-size: 1.25rem;
+    }
+  }
+
+  h4{
+    font-weight: bold;
+    font-size: 1rem;
+    line-height: 1em * 1.4;
+    color: $dark-gray;
+    letter-spacing: -0.41px;
+  }
+
+  p {
+    margin: 0 0 $small-spacing;
+    font-family: $heading-font-family;
+    font-size: 1rem;
+    color: #333333;
+    letter-spacing: -0.41px;
+    line-height: 24px;
+  }
+
+  a {
+    color: $msl-blue;
+    text-decoration: none;
+    transition: color $base-duration $base-timing;
+    font-weight: 600;
+
+    &:active,
+    &:focus,
+    &:hover {
+      color: shade($msl-blue, 25%);
+    }
+  }
+
+  hr {
+    border-bottom: $base-border;
+    border-left: 0;
+    border-right: 0;
+    border-top: 0;
+    margin: $base-spacing 0;
+  }
+
+  ul, ol{
+    margin-left: 20px;
+    margin-bottom: 25px;
+  }
+
+  ul{
+    list-style: disc;
+  }
+
+  ol{
+    list-style: decimal;
+  }
+
+  li{
+    margin-bottom: 4px;
+  }
+
+  background: #1F1F1F;
+  width: 100%;
+
+  #footer-top-container,
+  #footer-middle-container,
+  #footer-bottom-container{
+    padding: 0 15px;
+  }
+
+  #footer-top,
+  #footer-middle,
+  #footer-bottom{
+    max-width: $large-screen;
+    margin: auto;
+  }
+}
+
+
+
+#site-footer {
+  background: #1F1F1F;
+  width: 100%;
+
+  #footer-top-container,
+  #footer-middle-container,
+  #footer-bottom-container{
+    padding: 0 15px;
+  }
+
+  #footer-top,
+  #footer-middle,
+  #footer-bottom{
+    max-width: $large-screen;
+    margin: auto;
+  }
+}
+
+#footer-top-container {
+  border-bottom: 1px solid #3c4042;
+  background: $msl-blue;
+
+  @media only screen and (max-width: $large-screen) {
+    padding: 0 30px;
+  }
+
+  #footer-top{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #E7E7E7;
+    padding: 30px 0;
+
+    @media only screen and (max-width: $small-screen) {
+      width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .michigan-lottery-email-container{
+      display: flex;
+      align-items: center;
+
+      img {
+        max-width: 60px;
+      }
+
+      @media only screen and (max-width: $medium-screen) {
+        padding-right: 30px;
+      }
+
+      @media only screen and (max-width: $small-screen) {
+        padding-right: inherit;
+        margin-bottom: 20px;
+      }
+
+      img { padding-right: 12px; }
+
+      h4 {
+        text-transform: capitalize;
+      }
+
+      h4,
+      p{
+        color: #fff;
+        margin: 0;
+      }
+
+    }
+
+
+    .michigan-lottery-emails-cta {
+      @extend .ghost;
+
+      color: #fff !important;
+      border-color: #fff !important;
+
+      &:hover{ border-color: #fff; }
+
+      @media only screen and (max-width: $small-screen) {
+        width: 80%;
+      }
+    }
+
+
+  }
+}
+
+#footer-middle-container{
+
+  @media only screen and (max-width: $large-screen) {
+    padding: 0 30px;
+  }
+
+  #footer-middle {
+    padding: 60px 0 20px;
+    display: flex;
+    justify-content: space-between;
+
+    @media only screen and (max-width: $medium-screen) {
+      flex-direction: column;
+    }
+  }
+
+  #footer-middle-left {
+    min-width: 380px;
+
+    @media only screen and (max-width: $medium-screen) {
+      width: 100%;
+      min-width: initial;
+    }
+
+    .footer-content {
+      margin-right: 35px;
+      margin-bottom: 35px;
+
+      @media only screen and (max-width: $small-screen) {
+        margin-right: initial;
+      }
+    }
+
+    .footer-section-title {
+      color: #E7E7E7;
+      font-weight: bold;
+      font-size: 1em;
+      margin-bottom: 5px;
+      letter-spacing: -.41px;
+    }
+  }
+
+  #footer-middle-right {
+    @media only screen and (max-width: $medium-screen) {
+      width: 100%;
+    }
+    .footer-content {
+      margin-bottom: 35px;
+    }
+  }
+
+  .footer-content ul{
+    list-style: none;
+    margin: 0;
+
+    .footer-link {
+      color: #E7E7E7;
+      cursor: pointer;
+      line-height: 1.125em;
+      padding-bottom: 10px;
+      letter-spacing: -.41px;
+      font-weight: 300;
+      display: block;
+      width: 100%;
+
+      @media only screen and (max-width: $large-screen) {
+        padding: 18px 0;
+      }
+
+      &:hover{
+        color: $msl-gold;
+      }
+
+      span {
+        font-weight: 600;
+        margin-left: 4px;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: $large-screen) {
+  #michigan-lottery-links{display: none;}
+}
+
+#footer-bottom-container{
+  background: #3E3E3E;
+
+  #footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    @media only screen and (max-width: $medium-screen) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}
+
+
+.payment-options-container {
+  max-width: 315px;
+}
+
+
+.social-link {
+  max-width: 56px;
+}

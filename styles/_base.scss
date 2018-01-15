@@ -1,0 +1,104 @@
+body,
+html {
+  background-color: #134460;
+  color: #444444;
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	font-family: 'arial', sans-serif;
+	word-wrap: break-word;
+  background-image: url('../img/bg_keno.jpg');
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Open Sans', helvetica, sans-serif;
+  color: #444444;
+}
+
+h1 {
+	font-size: 46px;
+}
+
+h2 {
+	font-size: 40px;
+	font-weight: 700;
+	text-transform: uppercase;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 400;
+  margin: 20px 0 12px;
+  color: #027ac0;
+}
+
+h4 {
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	font-weight: 400;
+	word-spacing: 5px;
+}
+
+p, ul, li {
+	color: #222223;
+	font-size: 16px;
+	line-height: 1.5;
+	font-family: helvetica, arial, sans-serif;
+	font-weight: 300;
+}
+
+ul {
+  margin: 1em 0;
+}
+
+ul, li {
+  font-size: 16px;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: underline;
+}
+
+.cf:after {
+  content:" ";
+  display:block;
+  clear:both;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+@media (max-width: 1200px) {
+
+  body,
+  html {
+    overflow-x: hidden;
+  }
+
+}
+
+@media (max-width: 600px) {
+  p {
+    font-size: 16px;
+  }
+  body {
+    background-image: none;
+    background-color: #134563;
+  }
+}

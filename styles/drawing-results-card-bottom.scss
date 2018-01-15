@@ -1,0 +1,175 @@
+@import './imports.scss';
+@import './base/_buttons.scss';
+
+.winning-numbers-card-bottom {
+  background: #1F1F1F;
+  background-image: linear-gradient(-180deg, #424242 0%, #1F1F1F 69%);
+  padding: 14px 16px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  flex-direction: row;
+
+  .winning-numbers-card-bottom-last-draw-date {
+    text-align: center;
+  }
+
+  .fantasy5-numbers,
+  .lucky-for-life-numbers,
+  .lotto47-numbers {
+    padding: 0;
+  }
+
+  .winning-numbers-card-bottom-numbers-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media only screen and (max-width: $small-screen){
+      margin: 0 -15px;
+    }
+  }
+
+  .winning-numbers-card-bottom-numbers-daily-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .winning-numbers-card-bottom-numbers-keno-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .winning-numbers-card-bottom-payout {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #CAC9C9;
+    font-weight: 400;
+    border-radius: $base-border-radius;
+    padding: 8px 12px;
+    transition: background $base-duration $base-timing;
+
+    &:hover{
+      background: rgba(255,255,255,.1);
+    }
+  }
+
+  .winning-numbers-card-bottom-date {
+    text-align: center;
+    width: 120px;
+
+    h1 {
+      font-size: 18px;
+      color: #fff;
+      font-style: italic;
+      margin-bottom: 0px;
+    }
+
+    h2 {
+      font-size: 16px;
+      color: #fff;
+      font-weight: normal;
+      font-style: italic;
+      margin-bottom: 5px;
+    }
+  }
+
+  .winning-numbers-card-bottom-numbers-multidraw-container {
+    position: relative;
+    margin: 12px 4px;
+  }
+
+  .winning-numbers-card-bottom-numbers-multidraw-footer {
+    font-size: 1em * .875;
+    font-weight: normal;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 0px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 106%;
+    border-top: 1px solid #fff;
+  }
+
+  .winning-numbers-card-bottom-club-keno {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.175em;
+    padding: 12px 20px;
+    color: #fff;
+    font-weight: 600;
+
+    span {
+      font-weight: 300;
+      margin-right: 6px;
+    }
+}
+
+  .last-draw-date-label, .last-draw-date-label-mobile{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-size: 1em * .875;
+    letter-spacing: -0.4px;
+    position: relative;
+    color: #fff;
+    border: 2px solid #fff;
+    padding: 6px 12px;
+    margin-top: 8px;
+    min-width: 145px;
+    font-weight: 400;
+    font-style: normal;
+    border-radius: $base-border-radius;
+    transition: background $base-duration $base-timing;
+
+    img{
+      height: 19px;
+      width: 19px;
+      margin-right: 10px;
+    }
+
+    &:hover{
+      background: rgba(255,255,255,.1);
+      color: #fff;
+    }
+  }
+
+  .last-draw-date-label-mobile{
+    display: none;
+    margin-top: 24px;
+    font-size: 1em * 1.25;
+
+    img{ height: 22px;}
+  }
+}
+
+@media only screen and (max-width: $medium-screen - 1){
+
+  .winning-numbers-card-bottom{
+    flex-direction: column;
+
+    .last-draw-date-label{display: none;}
+    .last-draw-date-label-mobile{display: flex;}
+    .winning-numbers-card-bottom-payout{ display: none; }
+    .winning-numbers-card-bottom-numbers-keno-row{ max-width: 440px; }
+
+    .fantasy5-numbers,
+    .lucky-for-life-numbers,
+    .lotto47-numbers {
+      padding: 0;
+    }
+  }
+}
+
+@media only screen and (max-width: $small-screen){
+
+  .winning-numbers-card-bottom-numbers-multidraw-container{
+    .circle{ margin: 2px; }
+  }
+
+}

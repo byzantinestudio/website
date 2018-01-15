@@ -1,0 +1,10 @@
+@import '../../imports.scss';
+
+#footer-links-container {
+  display: flex;
+  justify-content: space-around;
+
+  @media only screen and (max-width: $large-screen) {
+    justify-content: flex-start;
+  }
+}

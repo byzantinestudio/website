@@ -1,0 +1,35 @@
+@import '../../imports.scss';
+
+.footer-content-mobile {
+  display: flex;
+}
+
+.footer-content-mobile ul{
+  list-style: none;
+  margin: 0;
+  width: 50%;
+
+  .footer-link {
+    color: #E7E7E7;
+    cursor: pointer;
+    line-height: 1.125em;
+    padding-bottom: 10px;
+    letter-spacing: -.41px;
+    font-weight: 300;
+    display: block;
+    width: 100%;
+
+    @media only screen and (max-width: $large-screen) {
+      padding: 18px 0;
+    }
+
+    &:hover{
+      color: $msl-gold;
+    }
+
+    span {
+      font-weight: 600;
+      margin-left: 4px;
+    }
+  }
+}

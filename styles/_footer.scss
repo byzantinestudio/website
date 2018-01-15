@@ -1,0 +1,362 @@
+.footer-nav {
+  ul, li {
+    font-size: 12px;
+  }
+}
+
+.row .footer-nav ul {
+  margin-top: 10px;
+}
+
+.footer-contact,
+.footer-nav {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.footer-contact {
+  margin-right: 0;
+}
+
+.footer_nav.legal_assurances {
+  margin: 2em 0;
+}
+
+.footer-nav {
+  padding-left: 60px;
+}
+
+.footer_nav1,
+.footer_nav2,
+.footer_nav3 {
+  margin-right: 3em;
+}
+
+.footer-nav p {
+  color: white;
+  line-height: 1.4;
+}
+
+.footer_nav.raffle_mlb_disclaimer {
+  margin-left: 0;
+}
+
+footer a[href^=tel]:link {
+  color: #0b7dc1 !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer {
+  background: #007cc3;
+  color: white;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.81em;
+  padding: 0 0 27px;
+}
+
+.ilottery_active footer #warning {
+  clear: both;
+  width: 100%
+}
+
+footer a {
+  color: white;
+  text-decoration: none
+}
+
+footer a:hover {
+  text-decoration: underline
+}
+
+footer a[href^=tel]:link {
+  color: white
+}
+
+footer h2 {
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+  margin: 0;
+  padding: 0
+}
+
+footer p {
+  font-size: 12px
+}
+
+footer .footer_nav {
+  float: left;
+  width: auto
+}
+
+footer .footer_nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0
+}
+
+footer .footer_nav ul.sharing {
+  min-height: 0;
+}
+
+.responsible_gaming_wrapper {
+  background: #134460;
+  margin: 0 0 20px;
+  padding: 15px 0
+}
+
+#lets_connect {
+  padding-right: 0;
+  width: 198px
+}
+
+#lets_connect p {
+  font-size: 10px;
+  line-height: 12px
+}
+
+.footer_disclaimer {
+  clear: both;
+  line-height: 1.3em
+}
+
+footer .btn_problem {
+  background: #f3f1f1;
+  padding: 2px 3px;
+  color: #264399;
+  font-weight: bold;
+  border-radius: 2px;
+  font-size: .9em
+}
+
+.monopoly_disclaimer {
+  margin: 3em 0 30px;
+  padding: 0 17px 0 75px;
+  position: relative;
+  text-transform: uppercase
+}
+
+.monopoly_disclaimer_logo {
+  left: 0;
+  margin-top: -30px;
+  position: absolute;
+  top: 50%
+}
+
+.disclaimer {
+  margin: 3em 0 30px;
+  text-align: center
+}
+
+footer #back_to_mobile_button {
+  clear: both;
+  text-align: right
+}
+
+.nhl_disclaimer {
+  font-size: 11px;
+  margin: 3em auto 30px;
+  max-width: 600px;
+  padding: 0 17px 0 54px;
+  position: relative;
+}
+
+.nhl_disclaimer_logo {
+  left: 0;
+  margin-top: -23px;
+  position: absolute;
+  top: 50%;
+}
+
+.responsible_gaming {
+  line-height: 1.6em;
+  margin: 0 auto;
+  padding: 0px 0 20px;
+  text-align: center;
+}
+
+.responsible_gaming_logos {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.responsible_gaming_text {
+  border-left: 1px solid #9ecde8;
+  border-right: 1px solid #9ecde8;
+  display: inline-block;
+  padding: 0 17px;
+  text-align: center;
+  vertical-align: middle;
+  width: 270px;
+
+  span {
+    display: block;
+  }
+}
+
+.responsible_gaming_logos2 {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  top: 15px;
+
+  .bound {
+    color: #134460;
+  }
+}
+
+.ncpg-logo {
+  margin-top: 10px;
+  display: block;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.responsible_gaming_logos2 img {
+  max-width: 118px;
+}
+
+.copyright {
+  border-top: 1px solid #bfdef0;
+  margin: 2em auto 0;
+  padding: 1em 1em 0;
+  text-align: center;
+}
+
+footer .raffle_mlb_disclaimer {
+  margin: 0 0 0 auto;
+  padding: 0;
+}
+
+.raffle_mlb_disclaimer img:nth-child(1) {
+  margin-right: 35px;
+  vertical-align: top;
+}
+
+.raffle_mlb_disclaimer img:nth-child(2) {
+  margin-right: 10px;
+}
+
+.raffle_mlb_disclaimer p {
+  display: inline-block;
+  width: 52%;
+  line-height: 1;
+  font-size: 10px;
+  vertical-align: top;
+  position: relative;
+  top: 4px;
+  font-weight: 400;
+}
+
+.mlb_disclaimer {
+  font-size: 1.15em;
+  font-weight: bold;
+  margin: 1.5em auto 0;
+  vertical-align: middle;
+  white-space: nowrap;
+  width: 825px;
+}
+
+.mlb_disclaimer img {
+  display: inline;
+  margin-right: 17px;
+  vertical-align: middle;
+}
+
+.contact_us {
+  background: #fff;
+  border: 2px solid #e1e1e1;
+  box-sizing: border-box;
+  color: #0b7dc1;
+}
+
+.contact_us_header {
+  color: #0b7dc1;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.contact_us_header h2 {
+  border-bottom: 1px solid #cfcfcf;
+  color: #0b7dc1;
+  font-size: 24px;
+  line-height: 40px;
+  padding: 0 10px;
+  text-transform: uppercase;
+}
+
+.contact_us ul {
+  list-style: none;
+  margin: 20px 0;
+  padding: 0 0 0 19px;
+}
+
+.contact_us li {
+  padding: 0 0 5px;
+}
+
+.contact_img {
+  display: inline-block;
+  margin-right: 10px;
+  text-align: center;
+  vertical-align: middle;
+  width: 24px;
+}
+
+.contact_text {
+  color: #0b7dc1;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-transform: uppercase;
+  vertical-align: 3px;
+}
+
+
+footer .footer_nav1,
+footer .footer_nav2 {
+  width: 30%;
+}
+
+footer .footer_nav3 {
+  width: 20%;
+}
+
+
+@media (max-width: 800px) {
+  .l-footer .responsible_gaming_logos {
+    margin-top: 0;
+  }
+}
+
+#footer_responsible_chat {
+  display: inline;
+}
+
+#footer_faq_image {
+  max-width: 13px;
+  margin-left: 5px;
+  margin-right: 16px;
+}
+
+#footer_ncpg_image {
+  margin: 0 auto;
+  display: block;
+}

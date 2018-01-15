@@ -1,0 +1,108 @@
+.l-games {
+  position: relative;
+}
+
+.ball {}
+
+.ball1 {
+  position: absolute;
+  top: 44px;
+  right: -67px;
+  z-index: 99;
+}
+
+.ball2 {
+  position: absolute;
+  top: 110px;
+  right: -50px;
+  z-index: 99;
+}
+
+.ball3 {
+  position: absolute;
+  top: 150px;
+  left: -85px;
+  z-index: 99;
+}
+
+.ball4 {
+  position: absolute;
+  top: 200px;
+  left: -120px;
+  z-index: 999;
+}
+
+.ball5 {
+  position: absolute;
+  top: 236px;
+  right: -120px;
+  z-index: 999;
+}
+
+
+.game {
+  display: block;
+
+  &:hover {
+    opacity: 0.8;
+    text-decoration: none;
+  }
+
+}
+
+
+.game-cost {
+  color: white;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: center;
+  position: relative;
+  left: -6px;
+
+  .icon {
+    top: 3px;
+    left: 8px;
+    position: relative;
+    display: inline-block;
+    text-indent: -99999999px;
+  }
+
+}
+
+@media (max-width: 850px) {
+  .ball1 {
+    right: -78px;
+  }
+
+  .ball2 {
+    right: -55px;
+  }
+
+  .ball3 {
+    left: -100px;
+  }
+
+  .ball4 {
+    left: -120px;
+  }
+
+  .ball5 {
+    right: -130px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ball1,
+  .ball2,
+  .ball3,
+  .ball4,
+  .ball5 {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .game-cost {
+    margin-bottom: 1.4em;
+  }
+}

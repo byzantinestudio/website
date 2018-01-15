@@ -1,0 +1,120 @@
+@import './imports.scss';
+@import './base/_buttons.scss';
+
+.winning-numbers-card {
+  background: white;
+  width: 100%;
+  border: solid 2px #1F1F1F;
+  border-radius: 6px;
+  margin-bottom: 44px;
+  position: relative;
+
+  .winning-numbers-card-featured{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 68px;
+  }
+}
+
+.winning-numbers-card-top {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+  padding: 20px;
+  justify-content: space-between;
+
+  @media only screen and (max-width: $medium-screen){
+    padding: 15px;
+  }
+
+  .estimated-jackpot-card-top-container {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    @media only screen and (max-width: $medium-screen - 1){
+      order: 3; flex-basis: 50%;
+    }
+    @media only screen and (max-width: $small-screen){
+      padding: 15px 0 20px;
+    }
+  }
+  .estimated-jackpot-results-pending-text{
+    @media only screen and (max-width: $small-screen){
+      font-size: 1em * 1.25;
+      }
+  }
+
+  .estimated-jackpot-card-top-container-club-keno {
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .winning-numbers-card-top-cta {
+    text-align: center;
+
+
+    @media only screen and (max-width: $medium-screen - 1){
+      order: 2;
+      flex-basis: 50%;
+    }
+
+    @media only screen and (max-width: $small-screen){
+      order: 4;
+      flex-basis: 100%;
+      margin: 15px 0 15px;
+    }
+
+    .time-to-buy{
+      margin-bottom: 6px;
+      margin-top: -6px;
+      font-size: 14px;
+
+      @media only screen and (max-width: $small-screen){
+        font-size: 1em * .75;
+      }
+    }
+
+    .winning-numbers-card-top-cta-buy-now {
+      position: relative;
+      @include button-color($msl-green);
+
+      .placeholder-icon img{
+        padding: 5px;
+        margin-left: -2px;
+      }
+    }
+
+    .winning-numbers-card-top-cta-find-retailer {
+      @extend .btn;
+      position: relative;
+      text-align: left;
+      padding: .75em;
+
+      .placeholder-icon img{
+        padding: 5px 8px;
+      }
+    }
+
+    .winning-numbers-card-top-cta-text {
+      position: relative;
+      margin-left: 2em;
+    }
+  }
+}
+
+.winning-numbers-card-top-date{
+
+  @media only screen and (max-width: $medium-screen - 1){
+    order: 4;
+    flex-basis: 50%;
+  }
+  @media only screen and (max-width: $small-screen){
+    padding: 15px 0 20px;
+  }
+
+}

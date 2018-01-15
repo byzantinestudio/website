@@ -1,0 +1,115 @@
+#{$all-buttons},
+.btn,
+.header-nav-button {
+  appearance: none;
+  background: $action-color;
+  border-radius: $base-border-radius;
+  border: none;
+  box-shadow: 0 0 3px 0 rgba(39,39,39,0.30);
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 600;
+  letter-spacing: -0.47px;
+  line-height: 1;
+  padding: 1em 1.25em;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  vertical-align: middle;
+  white-space: nowrap;
+  transition: all .18s ease;
+
+  &:hover,
+  &:focus{
+    background: darken($action-color, 6%);
+    color: white;
+    text-decoration: none;
+    box-shadow: 0 0 3px 0 rgba(39,39,39,0.30), inset 0 1px 3px 0 rgba(0,0,0,0.30);
+  }
+
+  &:active {
+    background: darken($action-color, 6%);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $action-color;
+    }
+  }
+
+  .placeholder-icon{
+    background-image: radial-gradient(50% 150%, rgba(0,0,0,0.15) 50%, rgba(0,0,0,0.19) 100%);
+    border-radius: $base-border-radius / 2;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 22px;
+    transform: translate(-50%, -50%);
+
+    &.tiny-icon {
+      width: 20px;
+      height: 20px;
+      background: #979797;
+      left: 1.25em;
+    }
+  }
+}
+
+.ghost{
+  @extend .btn;
+
+  border-radius: $base-border-radius;
+  background: transparent;
+  border: 2px solid $dark-gray;
+  color: $dark-gray;
+  padding: .75em 1.25em;
+  font-size: $base-font-size * .875;
+  text-shadow: none;
+
+  &:hover {
+    background: rgba(0,0,0,0.12);
+    border: 2px solid #343434;
+  }
+
+  &:disabled {
+    opacity: .2;
+    cursor: not-allowed;
+
+    &:disabled:hover{ background-color: transparent; }
+  }
+}
+
+.btn-green{
+  background: darken($msl-green, 0%);
+
+    &:hover,
+    &:focus{
+      background: darken($msl-green, 6%);
+    }
+
+    &:active {
+      background: darken($msl-green, 9%);
+    }
+}
+
+@mixin button-color($button-color) {
+  background: darken($button-color, 0%);
+
+    &:hover,
+    &:focus{
+      background: darken($button-color, 6%);
+    }
+
+    &:active {
+      background: darken($button-color, 9%);
+    }
+}

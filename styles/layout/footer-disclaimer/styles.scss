@@ -1,0 +1,26 @@
+@import '../../imports.scss';
+@import '../../base/_buttons.scss';
+
+#footer-legal {
+  max-width: $large-screen;
+  padding: 1.5em 0;
+  border-top: 1px solid #101010;
+  margin: auto;
+
+  @media only screen and (max-width: $medium-screen) {
+    width: inherit;
+  }
+
+  #desktop-footer-legal-copy {
+    text-align: center;
+    color: #E7E7E7;
+    font-size: 1em * .75;
+    line-height: 1.67;
+    letter-spacing: -0.3px;
+    text-align: left;
+
+    @media only screen and (max-width: $medium-screen) {
+      text-align: left;
+    }
+  }
+}

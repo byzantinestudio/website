@@ -1,0 +1,76 @@
+@import "./games-lobby-breakpoints";
+@import "./imports.scss";
+@import "./base/_buttons.scss";
+
+.game-tile {
+  display: inline-block;
+  width: 100%;
+  border-bottom: 1px solid #CAC9C9;
+
+  @media only screen and (min-width: $tablet) {
+    width: 33.333333%;
+    padding: 16px 6px;
+  }
+
+  @media only screen and (min-width: $tablet - 1) {
+    padding: 15px 6px;
+  }
+}
+
+.game-tile-item-thumbnail {
+  width: 219px;
+  height: 137px;
+  margin: auto;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 6px;
+
+  @media only screen and (max-width: $tablet - 1) {
+    width: 100%;
+    height: auto;
+    margin-bottom: 12px;
+  }
+}
+
+
+.game-tile-item {
+  width: 100%;
+  padding: 6.5px 6.5px 0px;
+
+  @media only screen and (max-width: $medium-screen - 1) {
+    padding: 15px 10px;
+  }
+
+  .game-tile-item-bottom {
+    height: 92px;
+    width: 100%;
+    position: relative;
+
+    @media only screen and (max-width: $tablet - 1) {
+      height: 114px;
+    }
+  }
+
+  .game-tile-item-name {
+    font-size: .875rem;
+    font-weight: bold;
+    color: #424242;
+    line-height: 22px;
+
+    @media only screen and (max-width: $medium-screen - 1) {
+      font-size: 1.125rem;
+    }
+  }
+
+  .category-text {
+    font-size: .625rem;
+  }
+
+  .game-tile-item-cta-container {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    margin-top: 12px;
+  }
+}

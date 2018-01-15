@@ -1,0 +1,128 @@
+.countdown {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+  margin: 0 auto;
+  color: white;
+}
+
+.countdown-stacked {
+  // flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  align-items: center;
+
+  @media (max-width: 800px) {
+    margin-bottom: 2em;
+  }
+
+  .time-inc-wrap {
+    margin-right: 15px;
+    margin-bottom: 0;
+    font-size: 17px;
+    color: white;
+
+    span {
+      display: block;
+    }
+  }
+
+  .time-inc-days {
+    &:after {
+      display: none;
+    }
+  }
+
+  &.countdown .time-inc {
+    font-size: 21px;
+  }
+
+}
+
+.time-inc-wrap {
+  color: white;
+}
+
+.time-inc-msg {
+  font-size: 12px;
+  margin: 5px 0 0 0;
+}
+
+.time-inc {
+  font-weight: bold;
+  font-size: 18px;
+  position: relative;
+
+  &:after {
+    font-weight: normal;
+    display: block;
+    font-size: 12px;
+  }
+}
+
+.marquee-content {
+  .time-inc {
+    font-size: 30px;
+
+    &:after {
+      font-size: 14px;
+      position: relative;
+      top: -5px;
+    }
+  }
+}
+
+.time-inc-days {
+  &:after {
+    content: 'Days';
+  }
+}
+
+.time-inc-hours {
+  &:after {
+    content: 'Hours';
+  }
+}
+
+.time-inc-mins {
+  &:after {
+    content: 'Mins';
+  }
+}
+
+.time-inc-secs {
+  &:after {
+    content: 'Secs';
+  }
+}
+
+
+.game-time-left-narrow {
+
+  &.game-time-container {
+    justify-content: center;
+
+    @media (max-width: 600px) {
+      margin-top: 1em;
+    }
+
+  }
+
+  .game-time-heading {
+    margin-left: 6em;
+
+    @media (max-width: 767px) {
+      margin-left: 2em;
+      width: 60%;
+    }
+  }
+
+  .game-time-left {
+    width: 25%;
+
+    @media (max-width: 767px) {
+      width: 35%;
+    }
+
+  }
+}

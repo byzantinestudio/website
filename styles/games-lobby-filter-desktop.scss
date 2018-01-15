@@ -1,0 +1,49 @@
+@import "./games-lobby-breakpoints";
+@import "./imports";
+
+#games-lobby-filter-desktop {
+  display: flex;
+  flex-direction: column;
+  width: 188px;
+  border-right: solid 0.5px #CAC9C9;
+  display: none;
+  @media only screen and (min-width: $desktop) {
+    display: block;
+  }
+}
+
+#games-lobby-filter-desktop-title {
+  font-size: 18px;
+  font-style: italic;
+  line-height: 1.39;
+  letter-spacing: -0.5px;
+  color: #8e8e93;
+  margin-bottom: 26px;
+}
+
+.games-lobby-filter-desktop-section-header {
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 1.56;
+  letter-spacing: -0.5px;
+  color: #3c4042;
+  margin-bottom: 15px;
+}
+
+.filter-form {
+  font-size: 16px;
+  line-height: 1.75;
+  letter-spacing: -0.5px;
+  color: #3c4042;
+}
+
+.games-lobby-filter-desktop-section {
+  padding-bottom: 12px;
+  margin-top: 12px;
+}
+
+#games-lobby-filter-desktop-where-to-play {
+  border-bottom: 1px dashed #CAC9C9;
+  padding-bottom: 24px;
+  margin-bottom: 24px;
+}

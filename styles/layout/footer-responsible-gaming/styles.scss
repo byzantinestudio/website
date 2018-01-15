@@ -1,0 +1,117 @@
+@import '../../imports.scss';
+@import '../../base/_buttons.scss';
+
+#footer-responsible-gaming {
+
+  @media only screen and (max-width: $medium-screen) {
+    margin-bottom: 60px;
+  }
+
+  .responsible-gaming-title {
+    color: #E7E7E7;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 5px;
+    letter-spacing: -.41px;
+  }
+
+  .responsible-gaming-subtitle {
+    width: 230px;
+    font-size: .875em;
+    font-style: italic;
+    line-height: 1.5em;
+    margin-bottom: 16px;
+    font-weight: 300;
+    color: #E7E7E7;
+  }
+
+
+  .responsible-gaming-cta {
+    margin-bottom: 5px;
+    color: #E7E7E7;
+
+    @media only screen and (max-width: $large-screen) {
+      margin: 24px 0;
+    }
+
+    img{
+      padding-right: 8px;
+      height: .9em;
+    }
+  }
+
+
+
+  .responsible-gaming-cta-text a{
+    color: #fff;
+    background: transparent;
+    padding: 0;
+    text-decoration: none;
+
+    &:hover{ color: $msl-gold; }
+  }
+
+  .responsible-gaming-cta-text-bold {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+
+  .problem-gambling-link{
+    color: $msl-gold;
+    margin-left: 3px;
+    text-decoration: underline;
+
+    &:hover{
+      background: none;
+      text-decoration: underline;
+      color: darken($msl-gold, 10%);
+    }
+  }
+
+  .problem-gaming-button {
+    height: 30px;
+    width: 150px;
+    padding: 0px;
+    background-color: #d8d8d8;
+    text-align: center;
+    align-content: center;
+
+    .problem-gaming-button-text {
+      text-align: center;
+    }
+  }
+
+  + .payment-options-container {
+    display: none;
+
+    @media only screen and (max-width: $medium-screen) {
+      display: block;
+    }
+
+  }
+
+}
+
+#footer-links-container {
+
+  + .payment-options-container {
+
+    @media only screen and (max-width: $medium-screen) {
+      display: none;
+    }
+
+  }
+
+}
+
+
+#footer-logo-container {
+  + .payment-options-container {
+    display: none;
+
+    @media only screen and (max-width: $medium-screen) {
+      display: block;
+    }
+
+  }
+}

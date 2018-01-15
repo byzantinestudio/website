@@ -1,0 +1,84 @@
+.btn {
+  color: white;
+  background: #009ade;
+  border: 0;
+  outline: 0;
+  position: relative;
+  border-radius: 0;
+  float: left;
+  font-family: 'Open Sans',sans-serif;
+  font-size: 16px;
+  padding: 6px 20px;
+  text-decoration: none;
+  display: inline-block;
+  -webkit-transition: all 0.1s;
+	-moz-transition: all 0.1s;
+	transition: all 0.1s;
+  text-transform: uppercase;
+  font-weight: 700;
+  min-width: 136px;
+
+  &:focus,
+  &:active {
+    color: white;
+    background: #009ade;
+  }
+
+}
+
+.btn:hover {
+  cursor: pointer;
+  color: #fdfefe;
+	opacity: 0.8;
+}
+
+.btn-secondary {
+  background-color: #277d16;
+  border: 2px solid white;
+
+  &:focus,
+  &:active {
+    color: white;
+    background-color: #277d16;
+  }
+}
+
+.btn-marquee-wrapper {
+  width: 100%;
+  position: relative;
+}
+
+.btn-marquee {
+  padding: 10px 20px;
+  font-size: 22px;
+  border: 2px solid white;
+  background: #277d16;
+  font-weight: bold;
+
+  position: absolute;
+  top: 37px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  &:hover {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.1);
+    background: #277d16;
+  }
+
+  &:focus,
+  &:active {
+    color: white;
+    background: #277d16;
+  }
+
+}
+
+
+@media (min-width: 767px) and (max-width: 870px) {
+  .btn-marquee {
+    padding: 8px 20px;
+    min-width: 150px;
+    font-size: 20px;
+  }
+}

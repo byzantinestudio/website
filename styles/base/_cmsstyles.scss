@@ -1,0 +1,91 @@
+@import '../../styles/imports.scss';
+@import '../../styles/base/_buttons.scss';
+
+.pull-image-left img{
+  padding-right: 30px;
+  padding-bottom: 24px;
+  float: left;
+
+  @media only screen and (max-width: $small-screen){
+    display: block;
+    float: inherit;
+    padding-right: 0;
+    margin: auto;
+  }
+}
+
+.pull-image-right img{
+  padding-left: 30px;
+  padding-bottom: 24px;
+  float: right;
+
+  @media only screen and (max-width: $small-screen){
+    display: block;
+    float: inherit;
+    padding-left: 0;
+    margin: auto;
+  }
+}
+
+
+.pull-center{
+  text-align: center;
+  margin: auto;
+}
+
+// .link-excel::before{
+//   content: url($public-asset-root + 'msl-website-assets/icon-cms-excel.svg');
+//   vertical-align: middle;
+//   padding-right: 12px;
+// }
+//
+// .link-word::before{
+//   content: url('https://s3.amazonaws.com/msl-website-assets/icon-cms-word.svg');
+//   vertical-align: middle;
+//   padding-right: 12px;
+// }
+//
+// .link-ppt::before{
+//   content: url('https://s3.amazonaws.com/msl-website-assets/icon-cms-ppt.svg');
+//   vertical-align: middle;
+//   padding-right: 12px;
+// }
+//
+// .link-pdf::before{
+//   content: url($public-asset-root + 'msl-website-assets/icon-cms-pdf.svg');
+//   vertical-align: middle;
+//   padding-right: 12px;
+// }
+//
+// .link-external::after{
+//   content: url($public-asset-root + 'msl-website-assets/icon-cms-external-link.svg');
+//   padding: 0 8px;
+// }
+
+.btn{
+  @include button-color($msl-blue);
+
+  &:hover{color: #fff;}
+}
+
+p.small{
+  font-size: 12px;
+  color: $dark-gray;
+  letter-spacing: -0.31px;
+  line-height: 12px * 1.4;
+}
+
+p.small.center{
+  text-align: center;
+  padding: 24px 0;
+  margin: auto;
+}
+
+.overall-odds{
+  background: $msl-blue;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  padding: 12px 0;
+  font-weight: 700;
+}

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="ITWAPj7MHZApZBtQo3vy-A24ZgKqBCn9Q7T-dBDjZRA" />
+    <link rel="stylesheet" href="./dist/css.min.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cairo:400,600,700" rel="stylesheet">
+    <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="./dist/paper-full.js"></script>
+
+
+    <script type="text/javascript" canvas="canvas">
+
+
+// Sensitive Bacterium
+// using the Paperjs library
+// http://paperjs.org
+//
+// Made by BASICS09
+// http://basics09.de
+//
+// For MicroHuman
+// http://micro-human.org
+
+(function($){
+
+	"use strict";
+
+	var mypaper;
+
+	$(document).ready(function() {
+
+		// initialize the paper animation
+		mypaper = new PaperWrap( $('#canvas')[0] );
+
+	});
+
+	function fitPaperWraps() {
+		mypaper.fit();
+	}
+
+	$(window).resize(function() {
+
+		waitForFinalEvent(function(){
+
+			fitPaperWraps();
+
+		}, 50, "resizing-papers");
+
+	});
+
+	var waitForFinalEvent = (function () {
+		var timers = {};
+			return function (callback, ms, uniqueId) {
+		if (!uniqueId) {
+			uniqueId = "Don't call this twice without a uniqueId";
+		}
+		if (timers[uniqueId]) {
+			clearTimeout (timers[uniqueId]);
+		}
+		timers[uniqueId] = setTimeout(callback, ms);
+		};
+	})();
+
+	function PaperWrap( canvasElement ) {
+
+		var mypaper = new paper.PaperScope();
+		mypaper.setup( canvasElement );
+
+		var view = mypaper.view,
+			Point = mypaper.Point,
+			Path = mypaper.Path,
+			Group = mypaper.Group;
+
+		// adjustable variables
+		var mouseForce = 0.1;
+		// other variables
+		var mousePoint = new Point(-1000, -1000);
+
+		function Bacterium(center, size, color) {
+			this.build(center, size, color);
+		}
+
+		Bacterium.prototype = {
+			build: function(center, radius, color) {
+
+				var padding = Math.min(view.size.width, view.size.height) * 0.1;
+
+
+				var timeScale = 1;
+				var maxWidth = view.size.width - padding * 2;
+				var maxHeight = view.size.height - padding * 2;
+				var w = maxWidth * timeScale;
+				var h = maxHeight * timeScale;
+
+				this.fitRect = new Path.Rectangle({
+					point: [view.size.width / 2 - w / 2, view.size.height / 2 - h / 2],
+					size: [w, h]
+				});
+
+				this.circlePath = new Path.Circle(center, radius);
+
+				this.group = new Group([this.circlePath]);
+				//this.group.strokeColor = "black";
+				this.group.position = view.center;
+
+				this.circlePath.fillColor = "#17181C";
+				this.circlePath.fullySelected = false;
+
+				// Mausdistanz
+				this.threshold = radius * 1.7;
+				this.center = center;
+				// Elemente hinzufügen
+				this.circlePath.flatten(radius * 4.5);
+				// wieder zum Kreis machen
+				this.circlePath.smooth();
+				// einpassen in das fitRect
+				this.circlePath.fitBounds( this.fitRect.bounds );
+
+				// control circle erstellen, auf den die einzelnen Punkte später zurückgreifen können
+				this.controlCircle = this.circlePath.clone();
+				this.controlCircle.fullySelected = false;
+				this.controlCircle.visible = false;
+
+				var rotationMultiplicator = radius / 20;
+
+				// Settings pro segment
+				this.settings = [];
+				for( var i = 0; i < this.circlePath.segments.length; i++ ) {
+					var segment = this.circlePath.segments[i];
+					this.settings[i] = {
+						relativeX: segment.point.x - this.center.x,
+						relativeY: segment.point.y - this.center.y,
+						offsetX: rotationMultiplicator,
+						offsetY: rotationMultiplicator,
+						momentum: new Point(0,0)
+					};
+				}
+			},
+			clear: function() {
+				this.circlePath.remove();
+				this.fitRect.remove();
+			},
+			animate: function(event) {
+
+				this.group.rotate(-0.8, view.center);
+
+				for( var i = 0; i < this.circlePath.segments.length; i++ ) {
+					var segment = this.circlePath.segments[i];
+
+					var settings = this.settings[i];
+					var controlPoint = new Point(
+						//settings.relativeX + this.center.x,
+						//settings.relativeY + this.center.y
+					);
+					controlPoint = this.controlCircle.segments[i].point;
+
+					// Avoid the mouse
+					var mouseOffset = mousePoint.subtract(controlPoint);
+					var mouseDistance = mousePoint.getDistance( controlPoint );
+					var newDistance = 10;
+
+					if( mouseDistance < this.threshold ) {
+						newDistance = (mouseDistance - this.threshold) * mouseForce;
+					}
+
+					var newOffset = new Point(0, 0);
+					if(mouseDistance !== 0){
+						newOffset = new Point(mouseOffset.x / mouseDistance * newDistance, mouseOffset.y / mouseDistance * newDistance);
+					}
+					var newPosition = controlPoint.add( newOffset );
+
+					var distanceToNewPosition = segment.point.subtract( newPosition );
+
+					settings.momentum = settings.momentum.subtract( distanceToNewPosition.divide( 10 ) );
+					settings.momentum = settings.momentum.multiply( 0.9 );
+
+					// Add automatic rotation
+
+					var amountX = settings.offsetX;
+					var amountY = settings.offsetY;
+					var sinus = Math.sin(event.time + i*2);
+					var cos =  Math.cos(event.time + i*2);
+					settings.momentum = settings.momentum.add( new Point(cos * -amountX, sinus * -amountY) );
+
+					// go to the point, now!
+					segment.point = segment.point.add( settings.momentum );
+
+				}
+			}
+		};
+
+		var radius = Math.min( view.size.width, view.size.height) / 4 * 0.5;
+		var bacterium = new Bacterium( view.bounds.center, radius, "black" );
+
+		view.onFrame = function(event) {
+			bacterium.animate(event);
+		};
+
+		$.support.touch = 'ontouchstart' in window;
+		if( !$.support.touch ) {
+			// this should only run if on a non-touch device, but it keeps running everywhere
+		}
+		var tool = new mypaper.Tool();
+		tool.onMouseMove = function(event) {
+			mousePoint = event.lastPoint;
+		};
+
+
+		var fit = this.fit = function() {
+
+			var $canvas = $( view.element );
+
+			var canvasWidth = $canvas.width();
+			var canvasHeight = $canvas.height();
+
+			$canvas
+				.attr("width", canvasWidth)
+				.attr("height", canvasHeight);
+
+			mypaper.view.viewSize = new mypaper.Size( canvasWidth, canvasHeight);
+
+		};
+
+
+
+		function redrawBacterium() {
+
+			// overwrite the global paper object with the local one
+			paper = mypaper;
+
+			radius = Math.min( view.size.width, view.size.height ) / 2;
+			radius = Math.floor( radius * 0.5 );
+
+			bacterium.clear();
+			bacterium = null;
+			bacterium = new Bacterium( view.bounds.center, radius, "black");
+		}
+
+		view.onResize = function(event) {
+			redrawBacterium();
+		};
+	}
+})(jQuery);
+
+
+
+    </script>
+
+
+
+
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./img/favicon.ico" type="image/x-icon">
+
+    <title>Byzantine | Blockchain venture studio building decentralized applications for the new web3</title>
+
+  </head>
+
+  <body>
+
+    <section class="section section-logo">
+      <img src="./img/icon.jpg" alt="Byzantine Icon">
+
+      <h1 class="title">Byzantine</h1>
+
+      <div class="intro">
+        <p>We're a blockchain venture studio building decentralized applications for the new web3.</p>
+      </div>
+
+
+
+
+      <ul>
+
+        <li class="social-link">
+          <p>Blog: </p>
+          <a href="https://medium.com/byzantine-studio" target="_blank">https://medium.com/byzantine-studio</a>
+        </li>
+
+        <li class="social-link">
+          <p>Github: </p>
+          <a href="https://github.com/byzantinestudio" target="_blank">https://github.com/byzantinestudio</a>
+        </li>
+
+        <li class="social-link">
+          <p>Email: </p>
+          <a href="mailto:hello@byzantine.studio" target="_blank">hello@byzantine.studio</a>
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <section class="section section-content">
+
+      <!-- <div class="emojis">🚀</div> -->
+      <div class="animation">
+        <canvas id='canvas'></canvas>
+        <svg id='paper'></svg>
+        <svg id='poper'></svg>
+      </div>
+
+      <p>Our name stems from two historical moments in time:</p>
+
+      <ol>
+        <li>The 2008 computer science breakthrough of Bitcoin in solving <a href="https://medium.com/all-things-ledger/the-byzantine-generals-problem-168553f31480" target="_blank">The Byzantine Generals problem</a> first explained by Leslie Lamport.</li>
+        <li>The legendary engineering skills of the Byzantium Empire which protected their civilization from adversaries for more than a 1000 years.</li>
+      </ol>
+    </section>
+
+
+
+
+  </body>
+
+</html>

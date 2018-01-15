@@ -1,0 +1,62 @@
+@import '../../imports.scss';
+@import '../../base/_buttons.scss';
+
+#footer-logo-container {
+  display: flex;
+
+  .footer-logo {
+    display: inline-block;
+    height: auto;
+    padding: 0 6px;
+    align-self: center;
+    text-align: center;
+
+    @media only screen and (max-width: $large-screen) {
+      padding: 0;
+    }
+
+    @media only screen and (max-width: $medium-screen) {
+      margin-top: 15px;
+    }
+
+    &:last-child{
+      width: 140px;
+      margin-left: 1.75em;
+
+      @media only screen and (max-width: $large-screen) {
+        width: 150px;
+        margin-left: 1em;
+        max-width: 128px;
+      }
+
+      @media only screen and (max-width: $medium-screen) {
+        width: 100%;
+      }
+
+      img{
+        margin-bottom: 12px;
+        float: right;
+
+        @media only screen and (max-width: $medium-screen) {
+          margin-left: 12px;
+          float: left;
+        }
+      }
+    }
+
+    img{
+      max-height: 70px;
+      display: block;
+
+      @media only screen and (max-width: $large-screen) {
+        margin-left: 8px;
+        display: inherit;
+        max-height: 80px;
+      }
+    }
+
+    &:first-child {
+      margin-left: 0px;
+    }
+  }
+}

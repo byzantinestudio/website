@@ -1,0 +1,20 @@
+@import '../../imports.scss';
+@import '../../base/_buttons.scss';
+
+#circles-container {
+  padding: 30px 0;
+  display: inherit;
+  display: flex;
+  justify-content: space-around;
+  width: 400px;
+
+  @media only screen and (max-width: $large-screen) {
+    justify-content: space-around;
+    padding-bottom: 12px;
+  }
+
+  a{
+    transition: all $base-duration $base-timing;
+    &:hover{ opacity: .7; }
+  }
+}
